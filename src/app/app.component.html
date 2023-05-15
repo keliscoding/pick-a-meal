@@ -3,14 +3,15 @@
   Pick A Meal
 </mat-toolbar>
 
-<main>
+<nav>
   <mat-divider></mat-divider>
   <button mat-button routerLink="">Home</button>
   <button mat-button routerLink="/meals">Meals</button>
   <mat-divider></mat-divider>
-  <section class="content">
-    <router-outlet></router-outlet>
-  </section>
+</nav>
+
+<main class="content">
+  <router-outlet></router-outlet>
 </main>
 
 <footer>Um footer qualquer</footer>
