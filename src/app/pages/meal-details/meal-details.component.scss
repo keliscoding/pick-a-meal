@@ -1,0 +1,37 @@
+@use '../../../styles.scss' as g;
+
+.container {
+
+  & h2 {
+    margin-top: 6%;
+    margin-bottom: 3%;
+    font-size: 4rem;
+    font-family: g.$title-font-family;
+  }
+
+  & .left {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    text-align: justify;
+
+    & .subtitle {
+      margin-bottom: 2%;
+      color: g.$subtitles;
+      font-family: g.$title-font-family;
+    }
+
+    & img {
+      max-width: 100%;
+    }
+    & p{
+
+        margin: 5% 2%;
+
+      &::first-letter {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+    }
+  }
+}

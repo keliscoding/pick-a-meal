@@ -1,1 +1,11 @@
-<p>meal-details works!</p>
+<section class="container">
+  <h2>{{ data.strMeal }}</h2>
+  <div class="left">
+    <span class="subtitle">{{ data.strCategory }} - {{ data.strArea }} Food</span>
+    <img [src]="data.strMealThumb" [alt]="data.strMeal"/>
+    <p>{{ data.strInstructions }}</p>
+  </div>
+  <div class="right">
+
+  </div>
+</section>

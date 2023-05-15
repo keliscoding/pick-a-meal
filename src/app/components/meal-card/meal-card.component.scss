@@ -1,3 +1,4 @@
+@use '../../../styles.scss' as g;
 
 .header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -5,9 +6,13 @@
 }
 
 .tag {
-  background-color: var(--base);
+  background-color: g.$primary;
   padding: 0.2rem 0.6rem;
   margin: 2% 2% 0 2%;
   border-radius: 100px;
 }
 
+mat-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+}
