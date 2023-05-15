@@ -15,6 +15,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { SliceWordsPipe } from './pipes/slice-words.pipe';
+import { MealDetailsComponent } from './pages/meal-details/meal-details.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SliceWordsPipe } from './pipes/slice-words.pipe';
     NotFoundComponent,
     MealCardComponent,
     SliceWordsPipe,
+    MealDetailsComponent,
   ],
   imports: [
     BrowserModule,
