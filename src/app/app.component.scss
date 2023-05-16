@@ -1,6 +1,9 @@
+@use '../styles.scss' as g;
+
 .title {
   display: flex;
   justify-content: space-between;
+  font-family: g.$title-font-family;
 }
 
 main {

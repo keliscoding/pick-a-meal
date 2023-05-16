@@ -1,36 +1,85 @@
 @use '../../../styles.scss' as g;
 
 .container {
-  margin: 6% auto;
-  width: 80%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
-  & h2 {
-    margin-bottom: 3%;
-    font-size: 4rem;
-    font-family: g.$title-font-family;
-  }
+  & .meal-details {
+    max-width: 60%;
+    margin: 3% 0;
 
-  & .left {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-    text-align: justify;
+    & .list {
+      list-style: none;
 
-    & .subtitle {
-      margin-bottom: 2%;
-      color: g.$subtitles;
-      font-family: g.$title-font-family;
-    }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
 
-    & img {
-      max-width: 100%;
-    }
-    & p{
-        margin: 5% 2%;
-      &::first-letter {
-        font-weight: 600;
-        font-size: 2rem;
+      & .measure {
+        color: g.$subtitles;
+        font-weight: 500;
+      }
+
+      & li::before {
+        background-image: url('../../../assets/icons/egg.svg');
+        background-size: 10px 10px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        content:"";
       }
     }
+
+    & h2 {
+      font-family: g.$title-font-family;
+      font-size: 2rem;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: g.$subtitles;
+        margin: 0;
+      }
+    }
+
+    & .text {
+      text-align: justify;
+      width: 90%;
+      margin: auto;
+
+      &::first-letter {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: g.$subtitles;
+      }
+    }
+
+    & .list {
+      text-transform: capitalize;
+    }
+  }
+
+  & img {
+    margin: 3% auto;
+    display: block;
+    border: 5px solid g.$primary;
+    max-width: 100%;
+  }
+}
+
+.subtitle {
+  font-family: g.$title-font-family;
+  font-size: 1.2rem;
+  color: g.$subtitles;
+}
+
+@media screen and (max-width: 767px) {
+  .container .meal-details{
+    max-width: 100%;
   }
 }

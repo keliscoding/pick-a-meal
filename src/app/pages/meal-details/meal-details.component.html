@@ -1,11 +1,33 @@
 <section class="container">
-  <h2>{{ data.strMeal }}</h2>
-  <div class="left">
-    <span class="subtitle">{{ data.strCategory }} - {{ data.strArea }} Food</span>
+  <div class="meal-details">
+    <h2>{{ data.strMeal }}</h2>
+    <p class="subtitle">{{ data.strCategory }} - {{ data.strArea }} Food</p>
     <img [src]="data.strMealThumb" [alt]="data.strMeal"/>
-    <p>{{ data.strInstructions }}</p>
-  </div>
-  <div class="right">
-
+    <p class="subtitle">Ingredients</p>
+    <!-- que ódio de quem fez essa api dessa forma -->
+    <ul class="list">
+      <li *ngIf="data.strIngredient1">{{data.strIngredient1}} &mdash; <span class="measure">{{data.strMeasure1}}</span></li>
+      <li *ngIf="data.strIngredient2">{{data.strIngredient2}} &mdash; <span class="measure">{{data.strMeasure2}}</span></li>
+      <li *ngIf="data.strIngredient3">{{data.strIngredient3}} &mdash; <span class="measure">{{data.strMeasure3}}</span></li>
+      <li *ngIf="data.strIngredient4">{{data.strIngredient4}} &mdash; <span class="measure">{{data.strMeasure4}}</span></li>
+      <li *ngIf="data.strIngredient5">{{data.strIngredient5}} &mdash; <span class="measure">{{data.strMeasure5}}</span></li>
+      <li *ngIf="data.strIngredient6">{{data.strIngredient6}} &mdash; <span class="measure">{{data.strMeasure6}}</span></li>
+      <li *ngIf="data.strIngredient7">{{data.strIngredient7}} &mdash; <span class="measure">{{data.strMeasure7}}</span></li>
+      <li *ngIf="data.strIngredient8">{{data.strIngredient8}} &mdash; <span class="measure">{{data.strMeasure8}}</span></li>
+      <li *ngIf="data.strIngredient9">{{data.strIngredient9}} &mdash; <span class="measure">{{data.strMeasure9}}</span></li>
+      <li *ngIf="data.strIngredient10">{{data.strIngredient10}} &mdash; <span class="measure">{{data.strMeasure10}}</span></li>
+      <li *ngIf="data.strIngredient11">{{data.strIngredient11}} &mdash; <span class="measure">{{data.strMeasure11}}</span></li>
+      <li *ngIf="data.strIngredient12">{{data.strIngredient12}} &mdash; <span class="measure">{{data.strMeasure12}}</span></li>
+      <li *ngIf="data.strIngredient13">{{data.strIngredient13}} &mdash; <span class="measure">{{data.strMeasure13}}</span></li>
+      <li *ngIf="data.strIngredient14">{{data.strIngredient14}} &mdash; <span class="measure">{{data.strMeasure14}}</span></li>
+      <li *ngIf="data.strIngredient15">{{data.strIngredient15}} &mdash; <span class="measure">{{data.strMeasure15}}</span></li>
+      <li *ngIf="data.strIngredient16">{{data.strIngredient16}} &mdash; <span class="measure">{{data.strMeasure16}}</span></li>
+      <li *ngIf="data.strIngredient17">{{data.strIngredient17}} &mdash; <span class="measure">{{data.strMeasure17}}</span></li>
+      <li *ngIf="data.strIngredient18">{{data.strIngredient18}} &mdash; <span class="measure">{{data.strMeasure18}}</span></li>
+      <li *ngIf="data.strIngredient19">{{data.strIngredient19}} &mdash; <span class="measure">{{data.strMeasure19}}</span></li>
+      <li *ngIf="data.strIngredient20">{{data.strIngredient20}} &mdash; <span class="measure">{{data.strMeasure20}}</span></li>
+    </ul>
+    <p class="subtitle">Instructions</p>
+    <p class="text">{{ data.strInstructions }}</p>
   </div>
 </section>

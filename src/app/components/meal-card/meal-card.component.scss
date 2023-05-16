@@ -17,3 +17,10 @@ mat-card-actions {
   flex-wrap: wrap;
 }
 
+mat-card-title, mat-card-subtitle {
+  font-family: g.$title-font-family;
+}
+
+mat-card-header {
+  margin-bottom: 3%;
+}
