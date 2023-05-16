@@ -27,7 +27,6 @@ export class MealDetailsComponent implements OnInit {
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((data) => {
         this.data = data.meals[0];
-        console.log(this.data);
       });
   }
 }

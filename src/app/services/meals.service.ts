@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Meal, Meals } from '../interfaces/Meal';
 import { Observable } from 'rxjs';
+import { Categories } from '../interfaces/Category';
 
 @Injectable({
   providedIn: 'root',
@@ -37,5 +38,9 @@ export class MealsService {
     }
 
     return this.getMealByName(name);
+  }
+
+  getMealCategories(): Observable<Categories> {
+    return this.http.get<Categories>(this.baseUrl + 'categories.php');
   }
 }

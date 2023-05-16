@@ -1,0 +1,24 @@
+
+@use '../../../styles.scss' as g;
+
+mat-card {
+  background-color: g.$primary;
+  transition: .3s background-color;
+
+  & img {
+    filter: grayscale(1);
+    transition: .3s filter;
+  }
+
+  &:hover {
+    background-color: g.$subtitles;
+
+    & img {
+      filter: blur(1px);
+    }
+  }
+}
+
+mat-card-title {
+  font-family: g.$title-font-family;
+}

@@ -1,1 +1,6 @@
-<p>categories works!</p>
+<div class="container" *ngIf="(!loading); else content">
+  <app-cat-card *ngFor="let category of data" class="card" [data]="category"></app-cat-card>
+</div>
+<ng-template #content>
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>

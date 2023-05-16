@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { CatCardComponent } from './components/cat-card/cat-card.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SliceParagraphsPipe } from './pipes/slice-paragraphs.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     CategoriesComponent,
     CatCardComponent,
     LoadingSpinnerComponent,
+    SliceParagraphsPipe,
   ],
   imports: [
     BrowserModule,
