@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Meal, MealDetails } from 'src/app/interfaces/Meal';
+import { finalize } from 'rxjs/operators';
+import { MealDetails } from 'src/app/interfaces/Meal';
 import { MealsService } from 'src/app/services/meals.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { MealsService } from 'src/app/services/meals.service';
 })
 export class MealDetailsComponent implements OnInit {
   data: MealDetails = {};
+  loading: boolean = false;
 
   constructor(
     private mealsService: MealsService,
@@ -19,8 +21,13 @@ export class MealDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.mealsService.getMealById(id).subscribe((data) => {
-      this.data = data.meals[0];
-    });
+    this.loading = true;
+    this.mealsService
+      .getMealById(id)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe((data) => {
+        this.data = data.meals[0];
+        console.log(this.data);
+      });
   }
 }

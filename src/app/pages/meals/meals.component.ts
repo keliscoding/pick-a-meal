@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Meals, MealCard } from 'src/app/interfaces/Meal';
+import { Component, OnInit } from '@angular/core';
+import { MealCard, Meals } from 'src/app/interfaces/Meal';
 import { MealsService } from 'src/app/services/meals.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-meals',
@@ -10,18 +11,34 @@ import { MealsService } from 'src/app/services/meals.service';
 export class MealsComponent implements OnInit {
   data: MealCard[] = [];
   searchMeal: string = '';
+  loading: boolean = false;
+  content: boolean = true;
 
   constructor(private mealsService: MealsService) {}
 
   ngOnInit() {
-    this.mealsService.getRandomMeals().subscribe((data) => {
-      this.data = data.meals;
-    });
+    this.loading = true;
+    this.mealsService
+      .getRandomMeals()
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe((data) => {
+        this.data = data.meals;
+        this.content = true;
+      });
   }
 
   search() {
-    this.mealsService.getMealsOnSearch(this.searchMeal).subscribe((data) => {
-      this.data = data.meals;
-    });
+    this.loading = true;
+    this.content = false;
+    this.mealsService
+      .getMealsOnSearch(this.searchMeal)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe((data) => {
+        if (data.meals.length > 0) {
+          this.data = data.meals;
+          this.content = true;
+        }
+        this.searchMeal = '';
+      });
   }
 }

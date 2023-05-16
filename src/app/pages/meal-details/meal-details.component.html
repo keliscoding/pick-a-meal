@@ -1,5 +1,5 @@
 <section class="container">
-  <div class="meal-details">
+  <div class="meal-details" *ngIf="(!loading); else content">
     <h2>{{ data.strMeal }}</h2>
     <p class="subtitle">{{ data.strCategory }} - {{ data.strArea }} Food</p>
     <img [src]="data.strMealThumb" [alt]="data.strMeal"/>
@@ -31,3 +31,7 @@
     <p class="text">{{ data.strInstructions }}</p>
   </div>
 </section>
+
+<ng-template #content>
+  <app-loading-spinner></app-loading-spinner>
+</ng-template>

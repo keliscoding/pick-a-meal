@@ -10,7 +10,15 @@
   </mat-form-field>
 </form>
 <div class="container">
-  <app-meal-card *ngFor="let meal of data" [meal]="meal" class="card"/>
+  <app-loading-spinner *ngIf="loading; else mealContent"></app-loading-spinner>
+  <ng-template #mealContent>
+    <ng-container *ngIf="content; else message">
+      <app-meal-card *ngFor="let meal of data" [meal]="meal" class="card"/>
+    </ng-container>
+    <ng-template #message>
+      <p>No recipe could be found</p>
+    </ng-template>
+  </ng-template>
 </div>
 
 

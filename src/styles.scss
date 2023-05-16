@@ -29,6 +29,10 @@ app-root {
 
 main {
   flex: 1;
+  align-self: center;
+  width: 92%;
+  display: flex;
+  justify-content: center;
 }
 
 footer {
@@ -40,3 +44,10 @@ mat-card {
   cursor: pointer;
 }
 
+.custom-spinner circle{
+  stroke: $subtitles !important;
+}
+
+app-meal-details {
+  align-self: center;
+}

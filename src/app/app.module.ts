@@ -21,6 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { CatCardComponent } from './components/cat-card/cat-card.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { FormsModule } from '@angular/forms';
     SliceWordsPipe,
     MealDetailsComponent,
     CategoriesComponent,
+    CatCardComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
