@@ -16,6 +16,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { SliceWordsPipe } from './pipes/slice-words.pipe';
 import { MealDetailsComponent } from './pages/meal-details/meal-details.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,17 +31,22 @@ import { MealDetailsComponent } from './pages/meal-details/meal-details.componen
     MealCardComponent,
     SliceWordsPipe,
     MealDetailsComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
     MatCardModule,
     MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

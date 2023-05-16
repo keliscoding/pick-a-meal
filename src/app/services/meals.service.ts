@@ -18,4 +18,24 @@ export class MealsService {
   getMealById(id: string | null): Observable<Meal> {
     return this.http.get<Meal>(this.baseUrl + 'lookup.php?i=' + id);
   }
+
+  getMealByFirstLetter(first: string | null): Observable<Meals> {
+    return this.http.get<Meals>(this.baseUrl + 'search.php?f=' + first);
+  }
+
+  getMealByName(name: string | null): Observable<Meals> {
+    return this.http.get<Meals>(this.baseUrl + 'search.php?s=' + name);
+  }
+
+  getMealsOnSearch(name: string | null): Observable<Meals> {
+    if (!name) {
+      return this.getRandomMeals();
+    }
+
+    if (name.length === 1) {
+      return this.getMealByFirstLetter(name);
+    }
+
+    return this.getMealByName(name);
+  }
 }
