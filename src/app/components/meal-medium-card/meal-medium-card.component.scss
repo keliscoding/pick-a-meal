@@ -1,5 +1,26 @@
 @use '../../../styles.scss' as g;
 
+mat-card {
+  background-color: g.$primary;
+  transition: .3s background-color;
+  height: 9rem;
+
+  & img {
+    filter: grayscale(1);
+    border-radius: 100px;
+    transition: .3s filter;
+  }
+
+  &:hover {
+    background-color: g.$subtitles;
+
+    & img {
+      filter: blur(1px);
+    }
+  }
+}
+
 mat-card-title {
   font-family: g.$title-font-family;
+  font-size: 1.2rem;
 }

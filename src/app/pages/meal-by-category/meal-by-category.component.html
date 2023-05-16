@@ -1,3 +1,6 @@
+<div class="center">
+  <h2>{{ name }}</h2>
+</div>
 <div class="container" *ngIf="(!loading); else content">
   <app-meal-medium-card *ngFor="let meal of data" class="card" [data]="meal"
   routerLink="/meals/{{ meal.idMeal }}"></app-meal-medium-card>

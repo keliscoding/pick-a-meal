@@ -51,3 +51,31 @@ mat-card {
 app-meal-details {
   align-self: center;
 }
+
+app-categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+
+  & h2 {
+    font-family: $title-font-family;
+    font-size: 2rem;
+    align-self: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: $subtitles;
+      margin: 0;
+    }
+  }
+}

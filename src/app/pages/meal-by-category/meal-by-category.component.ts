@@ -12,6 +12,7 @@ import { MealsService } from 'src/app/services/meals.service';
 export class MealByCategoryComponent {
   data: MealByCategory[] = [];
   loading: boolean = false;
+  name: string | null = '';
 
   constructor(
     private mealsService: MealsService,
@@ -19,11 +20,11 @@ export class MealByCategoryComponent {
   ) {}
 
   ngOnInit(): void {
-    const name = this.route.snapshot.paramMap.get('name');
+    this.name = this.route.snapshot.paramMap.get('name');
 
     this.loading = true;
     this.mealsService
-      .getMealByCategoryName(name)
+      .getMealByCategoryName(this.name)
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((data) => {
         this.data = data.meals;
