@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { MealDetails } from 'src/app/interfaces/Meal';
 import { MealsService } from 'src/app/services/meals.service';
@@ -12,8 +12,10 @@ import { MealsService } from 'src/app/services/meals.service';
 export class MealDetailsComponent implements OnInit {
   data: MealDetails = {};
   loading: boolean = false;
+  exists: boolean = false;
 
   constructor(
+    private router: Router,
     private mealsService: MealsService,
     private route: ActivatedRoute
   ) {}
@@ -24,9 +26,18 @@ export class MealDetailsComponent implements OnInit {
     this.loading = true;
     this.mealsService
       .getMealById(id)
-      .pipe(finalize(() => (this.loading = false)))
+      .pipe(
+        finalize(() => {
+          this.loading = false;
+        })
+      )
       .subscribe((data) => {
-        this.data = data.meals[0];
+        const meal = data.meals;
+
+        if (!meal) {
+          return this.router.navigate(['/not-found']);
+        }
+        return (this.data = meal[0]);
       });
   }
 }

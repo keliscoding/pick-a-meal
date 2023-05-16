@@ -12,7 +12,8 @@ export class CategoriesComponent implements OnInit {
   loading: boolean = false;
   data: Category[] = [];
 
-  constructor(private mealsService: MealsService) {}
+  constructor(
+    private mealsService: MealsService) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -20,7 +21,7 @@ export class CategoriesComponent implements OnInit {
       .getMealCategories()
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((data) => {
-        this.data = data.categories;
+        return this.data = data.categories;
       });
   }
 }

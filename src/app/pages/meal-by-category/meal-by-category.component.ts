@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { MealByCategory } from 'src/app/interfaces/Meal';
 import { MealsService } from 'src/app/services/meals.service';
@@ -15,6 +15,7 @@ export class MealByCategoryComponent {
   name: string | null = '';
 
   constructor(
+    private router: Router,
     private mealsService: MealsService,
     private route: ActivatedRoute
   ) {}
@@ -27,7 +28,12 @@ export class MealByCategoryComponent {
       .getMealByCategoryName(this.name)
       .pipe(finalize(() => (this.loading = false)))
       .subscribe((data) => {
-        this.data = data.meals;
+        const meal = data.meals;
+
+        if (!meal) {
+          return this.router.navigate(['/not-found']);
+        }
+        return (this.data = meal);
       });
   }
 }

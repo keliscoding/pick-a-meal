@@ -79,3 +79,15 @@ app-categories {
     }
   }
 }
+
+.text {
+  text-align: justify;
+  width: 90%;
+  margin: auto;
+
+  &::first-letter {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $subtitles;
+  }
+}
