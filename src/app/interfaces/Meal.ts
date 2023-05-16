@@ -62,3 +62,13 @@ export interface MealDetails {
   strMeasure19?: string;
   strMeasure20?: string;
 }
+
+export interface MealsByCategory {
+  meals: MealByCategory[];
+}
+
+export interface MealByCategory {
+  strMeal?: string;
+  strMealThumb?: string;
+  idMeal?: string;
+}

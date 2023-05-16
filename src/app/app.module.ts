@@ -25,6 +25,8 @@ import { CatCardComponent } from './components/cat-card/cat-card.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SliceParagraphsPipe } from './pipes/slice-paragraphs.pipe';
+import { MealByCategoryComponent } from './pages/meal-by-category/meal-by-category.component';
+import { MealMediumCardComponent } from './components/meal-medium-card/meal-medium-card.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { SliceParagraphsPipe } from './pipes/slice-paragraphs.pipe';
     CatCardComponent,
     LoadingSpinnerComponent,
     SliceParagraphsPipe,
+    MealByCategoryComponent,
+    MealMediumCardComponent,
   ],
   imports: [
     BrowserModule,
