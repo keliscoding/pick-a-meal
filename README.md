@@ -1,27 +1,30 @@
-# PickAMeal
+<h1 align="center">Pick-A-Meal</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+<p align="center">
+  <a href="https://pick-a-meal.vercel.app/" target"_blank"> Live project available here</a>
+</p>
 
-## Development server
+<br>
+<p align="center" >
+  <img alt="food logo" src="https://i.imgur.com/kNeucCG.png" width="100">
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ⚫ Project
 
-## Build
+This app is called pick a meal, its a poc of a website focused in display recipes to its users by categories, first letter and food name. The goal of this project was to learn how to deal with external api calls and customize layouts using angular material.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## ⚫ Run The Project Locally
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In order to run it locally, you need to git clone it into your machine, then go to its folder and run the following command:
 
-## Running end-to-end tests
+```
+ng serve --o
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="center">Made with 🖤 by Zam0k.</p>
