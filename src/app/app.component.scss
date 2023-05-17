@@ -6,3 +6,22 @@
   font-family: g.$title-font-family;
 }
 
+.navbar-mobile {
+  display: none;
+}
+
+.navbar-desktop {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 767px) {
+  .navbar-desktop, .food-home-button {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: inline-block;
+  }
+}

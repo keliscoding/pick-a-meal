@@ -27,6 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SliceParagraphsPipe } from './pipes/slice-paragraphs.pipe';
 import { MealByCategoryComponent } from './pages/meal-by-category/meal-by-category.component';
 import { MealMediumCardComponent } from './components/meal-medium-card/meal-medium-card.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MealMediumCardComponent } from './components/meal-medium-card/meal-medi
     MatInputModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

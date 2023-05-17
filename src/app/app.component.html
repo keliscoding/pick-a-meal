@@ -1,18 +1,38 @@
 <mat-toolbar class="title">
-  <button mat-icon-button routerLink="" class="ph ph-bowl-food"></button>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="navbar-mobile">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item routerLink="/meals">
+        <mat-icon><i class="ph ph-fork-knife"></i></mat-icon>
+        <span>Meals</span>
+      </button>
+      <button mat-menu-item routerLink="/categories">
+        <mat-icon><i class="ph ph-cooking-pot"></i></mat-icon>
+        <span>Categories</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button routerLink="" class="ph ph-bowl-food food-home-button"></button>
+  </div>
   Pick A Meal
 </mat-toolbar>
-
-<nav>
-  <mat-divider></mat-divider>
+<mat-divider></mat-divider>
+<nav class="navbar-desktop">
   <button mat-button routerLink="">Home</button>
   <button mat-button routerLink="/meals">Meals</button>
   <button mat-button routerLink="/categories">Categories</button>
-  <mat-divider></mat-divider>
 </nav>
+<mat-divider></mat-divider>
 
 <main class="content">
   <router-outlet></router-outlet>
 </main>
 
-<footer>Um footer qualquer</footer>
+<footer>
+  <p>Made with 🖤 by <a href='https://github.com/zam0k' target="_blank">Zam0k</a></p>
+</footer>
